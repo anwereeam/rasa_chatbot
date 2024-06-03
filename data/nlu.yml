@@ -1,0 +1,68 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - goodafternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - goodby
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Yes
+    - YES
+    - Y
+
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - N
+    - NO
+- intent: inform
+  examples: |
+    - I am experiencing [skin_rash](symptoms) and [itching](symptoms)
+    - [fatigue](symptoms) and [weight_loss](symptoms)
+    - [vomiting](symptoms) and [sunken_eyes](symptoms)
+    - My symptoms include [chills](symptoms) and [sweating](symptoms)
+    - [joint_pain](symptoms) and [high_fever](symptoms)
+    - I have [chills](symptoms) and [body aches](symptoms)
+    - i suffer from [constipation](symptoms) and[diarrhoea](symptoms)
+    

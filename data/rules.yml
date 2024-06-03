@@ -1,0 +1,39 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- rule: Say greet anytime the user says greet
+  steps:
+  - intent: greet
+  - action: action_select_symptom
+  - action: action_ask_disease
+- rule: ask anytime the user deny
+  steps:
+  - intent: deny
+  - action: action_select_symptom
+  - action: action_ask_disease
+- rule: predict more anytime the user affirm
+  steps:
+  - intent: affirm
+  - action: action_yes
+  - action: action_predict_disease
+  - slot_was_set:
+        - condition: 0
+  - action: action_select_symptom
+  - action: action_ask_disease
+- rule: predict anytime the user affirm 
+  steps:
+  - intent: affirm
+  - action: action_yes
+  - action: action_predict_disease
+  - slot_was_set:
+        - condition: 1
+  - action: action_provide_info
+- rule: ask after select
+  steps:
+  - action: action_select_symptom
+  - action: action_ask_disease

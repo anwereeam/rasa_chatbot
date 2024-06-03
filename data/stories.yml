@@ -1,0 +1,46 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: action_select_symptom
+  - action: action_ask_disease
+  - intent: affirm
+  - action: action_yes
+  - action: action_predict_disease
+  - slot_was_set:
+        - condition: 0
+  - action: action_select_symptom
+  - action: action_ask_disease
+- story: happy path2
+  steps:
+  - intent: greet
+  - action: action_select_symptom
+  - action: action_ask_disease
+  - intent: affirm
+  - action: action_yes
+  - action: action_predict_disease
+  - slot_was_set:
+        - condition: 1
+  - action: action_provide_info
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: action_select_symptom
+  - action: action_ask_disease
+  - intent: deny
+  - action: action_select_symptom
+  - action: action_ask_disease
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: action_select_symptom
+  - action: action_ask_disease
+  - intent: deny
+  - action: action_select_symptom
+  - action: action_ask_disease
+  - intent: goodbye
+  - action: utter_goodbye
